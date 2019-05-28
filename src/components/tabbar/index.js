@@ -7,8 +7,8 @@ import Shopcar from '../shopcar/index'
 import Mine from '../mine/index'
 class Tabbar extends React.Component{
     render(){
-        return <div>
-             <Switch>
+        return <div className="con">
+            <Switch>
             <Route path="/home" component={Home} />
             <Route path="/list" component={List} />
             <Route path="/shopcar" component={Shopcar} />
@@ -17,10 +17,10 @@ class Tabbar extends React.Component{
             </Switch>
             <div className="footer">
             <ul>
-                <NavLink to="/home">首页</NavLink >
-                <NavLink to="/list">列表</NavLink >
-                <NavLink to="/shopcar">购物车</NavLink >
-                <NavLink to="/mine">我的</NavLink >
+                <NavLink to="/home"><i className="iconfont icon-guo"></i><span>首页</span></NavLink >
+                <NavLink to="/list"><i className="iconfont icon-daochacanju"></i><span>分类</span></NavLink >
+                <NavLink to="/shopcar"><i className="iconfont icon-bao"></i><span>购物车</span></NavLink >
+                <NavLink to="/mine"><i className="iconfont icon-chushimaoline"></i><span>我的</span></NavLink >
             </ul>
         </div>
         </div>
