@@ -1,0 +1,328 @@
+.shopcar-all{
+    width: 100%;
+    height: 12.24rem;
+    background: #f4f4f4;
+    margin-top: 1.1rem;
+    position: relative;
+}
+.shopcar-top{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: .9rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 .2rem;
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
+    z-index: 99;
+}
+.shopcar-top >.shopcar-top-hock{
+    width: .3rem;
+    height: .3rem;
+    margin-left: .08rem;
+    top: -.1rem;
+}
+.shopcar-top >.shopcar-top-hock >img{
+    width: 100%;
+    height: 100%;
+}
+.shopcar-top >.shopcar-top-adress{
+    width: 5.5rem;
+    height: .8rem;
+    font-size: .3rem;
+    color: #333;
+    padding-left: .5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.shopcar-top >.shopcar-top-adress >.shopcar-top-adress-pic{
+    width: .3rem;
+    height: .3rem;
+    margin-right: .2rem;
+}
+.shopcar-top >.shopcar-top-adress >.shopcar-top-adress-pic >img{
+    width: 100%;
+    height: 100%;
+}
+.shopcar-top >.shopcar-top-adress >.shopcar-top-adress-pic2{
+    width: .3rem;
+    height: .3rem;
+}
+.shopcar-top >.shopcar-top-adress >.shopcar-top-adress-pic2 >img{
+    width: 100%;
+    height: 100%;
+}
+.shopcar-top >.shopcar-top-adress >.shopcar-top-adress-adr{
+    font-size: .3rem;
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.shopcar-top >.shopcar-top-edit{
+    width: .8rem;
+    font-size: .26rem;
+    color: #666;
+}
+.shopcar-main{
+    flex: 1;
+    overflow: auto;
+}
+/* 购物车商品 */
+.shopcar-shop{
+    width: 100%;
+    height: 100%;
+}
+.shopcar-shop >ul{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.shopcar-shop >ul >li{
+    width: 100%;
+    height: 2.2rem;
+    background: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: .1rem;
+}
+.shopcar-shop >ul >li >.shopcar-shop >.shopcar-shop-btn{
+    width: .35rem;
+    height: 2.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.shopcar-shop >ul >li >.shopcar-shop-pic{
+    width: 2.2rem;
+    height: 2.2rem;
+}
+.shopcar-shop >ul >li >.shopcar-shop-pic >img{
+    width: 100%;
+    height: 100%;
+}
+.shopcar-shop >ul >li >.shopcar-shop-info{
+    width: 5.16rem;
+    height: 2.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.shopcar-shop >ul >li >.shopcar-shop-info >.info-title{
+    width: 100%;
+    height: .6rem;
+    overflow: hidden;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    height: .6rem;
+    font-size: .28rem;
+}
+.shopcar-shop >ul >li >.shopcar-shop-info >.info-total{
+    width: 100%;
+    height: .5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.shopcar-shop >ul >li >.shopcar-shop-info >.info-total >.info-total-price{
+    width: 2.17rem;
+}
+.shopcar-shop >ul >li >.shopcar-shop-info >.info-total >.info-total-price >span{
+    color: #f96d16;
+    font-size: .3rem;
+}
+.shopcar-shop >ul >li >.shopcar-shop-info >.info-total >.info-total-price >i{
+    font-size: .26rem;
+    font-style: normal;
+    text-decoration: line-through;
+    color: #999;
+}
+
+.shopcar-shop >ul >li >.shopcar-shop-info >.info-total >.info-total-count{
+    width: 1.45rem;
+    height: .5rem;
+    display: flex;
+    margin-right: .2rem;
+}
+.shopcar-shop >ul >li >.shopcar-shop-info >.info-total >.info-total-count >.jian{
+    width: .45rem;
+    height: .45rem;
+    color: #999;
+    background: #f5f5f5;
+    line-height: .45rem;
+    text-align: center;
+    border-radius: 50% 0 0 50%;
+}
+.shopcar-shop >ul >li >.shopcar-shop-info >.info-total >.info-total-count >.jia{
+    width: .45rem;
+    height: .45rem;
+    color: #999;
+    background: #f5f5f5;
+    line-height: .45rem;
+    text-align: center;
+    border-radius: 0 50% 50% 0;
+}
+.shopcar-shop >ul >li >.shopcar-shop-info >.info-total >.info-total-count >input{
+    width: .65rem;
+    height: .45rem;
+    text-align: center;
+    line-height: .45rem;
+    background: #f5f5f5;
+    border: 0;
+}
+/* 推荐商品 */
+.shopcar-other{
+    width: 100%;
+    background: #f4f4f4;
+    padding: 1rem .28rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.shopcar-other >.shopcar-other-title{
+    margin-bottom: .3rem;
+    width: 4.72rem;
+    height: .3rem;
+    background: url(http://wmall.wochu.cn/h5/mall/img/recommend.png) center/100%;
+}
+.shopcar-other >.shopcar-other-list{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.shopcar-other >.shopcar-other-list >.shopcar-other-shop{
+    margin-bottom: .28rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: .1rem;
+    width: 32.5%;
+    height: 3.92rem;
+    background: #fff;
+    margin-right: .058rem;
+}
+.shopcar-other >.shopcar-other-list >.shopcar-other-shop >.shopcar-other-shop-pic{
+    width: 2.25rem;
+    height: 2.26rem;
+}
+.shopcar-other >.shopcar-other-list >.shopcar-other-shop >.shopcar-other-shop-pic >img{
+    width: 100%;
+    height: 100%;
+}
+.shopcar-other >.shopcar-other-list >.shopcar-other-shop >.shopcar-other-shop-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex: 1;
+    padding: .12rem .16rem .22rem;
+    background: #fff;
+}
+.shopcar-other >.shopcar-other-list >.shopcar-other-shop >.shopcar-other-shop-info >p{
+    font-size: .28rem;
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.shopcar-other >.shopcar-other-list >.shopcar-other-shop >.shopcar-other-shop-info >.shopcar-other-shop-add{
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.shopcar-other >.shopcar-other-list >.shopcar-other-shop >.shopcar-other-shop-info >.shopcar-other-shop-add>.shopcar-other-shop-add-price{
+    width: 1.44rem;
+    height: .7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.shopcar-other >.shopcar-other-list >.shopcar-other-shop >.shopcar-other-shop-info >.shopcar-other-shop-add>.shopcar-other-shop-add-price >.old-price{
+    font-size: .22rem;
+    color: grey;
+    text-decoration: line-through;
+}
+.shopcar-other >.shopcar-other-list >.shopcar-other-shop >.shopcar-other-shop-info >.shopcar-other-shop-add>.shopcar-other-shop-add-price >.current-price{
+    font-size: .28rem;
+    color: #f96d16;
+}
+.shopcar-other >.shopcar-other-list >.shopcar-other-shop >.shopcar-other-shop-info >.shopcar-other-shop-add >.add-btn{
+    margin: 0;
+    width: .5rem;
+    height: .5rem;
+    background: url(http://wmall.wochu.cn/h5/mall/img/add_cart.png);
+    background-size: 100%;
+}
+/* 没有更多 */
+.shopcar-nomore{
+    color: #666;
+    font-size: .28rem;
+    margin-bottom: 1.1rem;
+}
+/* 结算标签 */
+.label{
+    position: fixed;
+    bottom: 1rem;
+    left: 0;
+    width: 100%;
+    height: 1rem;
+    z-index: 99;
+    background: #fff;
+    padding-left: .2rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.label >.label-checkbox{
+    width: .34rem;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.label >.label-checkbox >input{
+    width: .34rem;
+    height: .34rem;
+}
+.label >.label-price{
+    float: left;
+    width: 3.16rem;
+    height: 1.14rem;
+    margin-left: .2rem;
+    padding: .16rem 0;
+    line-height: .68rem;
+    display: flex;
+}
+.label >.label-price >.label-price-money{
+    width: 1.95rem;
+    height: .72rem;
+    font-size: .36rem;
+    color: #f96d16;
+}
+.label >.label-price >.label-price-money >span{
+    font-size: .26rem;
+    color: #333;
+}
+.label >.label-price >.label-price-freight{
+    font-size: .26rem;
+    color: #999;
+    line-height: .68rem
+}
+.label >.label-btn{
+    width: 2.3rem;
+    height: 100%;
+    line-height: 1rem;
+    font-size: .36rem;
+    float: right;
+    color: #fff;
+    background: rgb(249, 109, 22);
+    text-align: center;
+    margin-left: 1.3rem;
+}
