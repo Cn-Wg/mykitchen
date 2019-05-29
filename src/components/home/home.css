@@ -82,11 +82,11 @@
     justify-content: space-around;
     align-items: center;
 }
-.Nav ul li {
+.Nav ul a {
     width:1.7rem;
     height:1.7rem;
 }
-.Nav ul li img {
+.Nav ul a img {
     height:100%;
     width:100%;
 }
@@ -188,6 +188,7 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     padding-top: .32rem;
+    color: #666;
 }
 .ltime-bottom-right h2 {
     width: 100%;
