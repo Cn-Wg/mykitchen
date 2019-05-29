@@ -13,6 +13,7 @@
     display: flex;
     position: fixed;
     top:0;
+    z-index: 999;
 }
 .top-left{
     width:.88rem;
@@ -59,7 +60,7 @@
 .banner{
     width:100%;
     height:3.32rem;
-    margin-top:0.9rem;
+    margin-top:.9rem;
     background:#fff;
 }
 .banner img {

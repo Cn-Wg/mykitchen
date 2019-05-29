@@ -1,7 +1,30 @@
 import React from 'react'
+import {NavLink} from 'react-router-dom'
 import './home.css'
+import {connect} from 'react-redux'
+import action from './action'
+import Swiper from 'swiper'
+import 'swiper/dist/css/swiper.css'
 class Home extends React.Component{
+    componentDidMount(){
+        this.props.getData()
+    }
+    componentDidUpdate(){
+        var mySwiper = new Swiper ('.swiper-container', {
+            loop: true, // 循环模式选项
+            // 如果需要分页器
+            pagination: {
+              el: '.swiper-pagination',
+            },
+            autoplay: {
+                    delay: 3000,
+                    disableOnInteraction:false
+                }
+
+  })
+    }
     render(){
+        console.log(this.props.nav[0])
         return <div className="home">
         {/* 头部 */}
             <div className="top">
@@ -12,22 +35,36 @@ class Home extends React.Component{
                     <span>请填写地址</span>
                     <i><img src="http://wmall.wochu.cn/h5/home/vueimg/icon.png" /></i>
                 </div>
-                <div className="top-right">
+                <NavLink to="/search" className="top-right">
                     <img src="http://wmall.wochu.cn/h5/home/vueimg/search.png" />
-                </div>
+                </NavLink>
             </div>
         {/* 轮播图 */}
-            <div className="banner">
-                <img src="https://img.wochu.cn/upload/42361356-0aff-4c08-a23e-6f677fdd022f.jpg" />
-            </div>
+        <div className="swiper-container">
+			    <div className="swiper-wrapper banner">
+			       {
+			       	  this.props.list.map((item)=>{
+			       	    return 	<div key={item.sortIndex} className="swiper-slide">
+			       	    	<img src={item.picUrl} />
+			       	    </div>
+			       	  })
+			        
+			       }
+			        
+			    </div>
+   	
+   				 <div className="swiper-pagination"></div>
+   		 </div>
         {/* NAV */}
             <div className="Nav">
-                <ul>
-                    <li><img src="https://img.wochu.cn/upload/2c16adf3-0d5a-482b-9c09-050884593bd5.jpg" /></li>
-                    <li><img src="https://img.wochu.cn/upload/2c16adf3-0d5a-482b-9c09-050884593bd5.jpg" /></li>
-                    <li><img src="https://img.wochu.cn/upload/2c16adf3-0d5a-482b-9c09-050884593bd5.jpg" /></li>
-                    <li><img src="https://img.wochu.cn/upload/2c16adf3-0d5a-482b-9c09-050884593bd5.jpg" /></li>
-                </ul>
+            <ul> 
+                    {/* {
+
+                       this.props.nav[0].items.map((item)=>{
+                           return <li key={item.pos}><img sec={item.imgUrl} /></li>
+                       })
+                   } */}
+            </ul>
                 <ul>
                     <li><img src="https://img.wochu.cn/upload/2c16adf3-0d5a-482b-9c09-050884593bd5.jpg" /></li>
                     <li><img src="https://img.wochu.cn/upload/2c16adf3-0d5a-482b-9c09-050884593bd5.jpg" /></li>
@@ -186,4 +223,19 @@ class Home extends React.Component{
         </div>
     }
 }
-export default Home
+
+var mapState=(state)=>{
+    return {
+        list : state.home.list,
+        nav : state.home.nav
+    }
+}
+
+var mapAction = (dispatch)=>{
+    return {
+        getData(){
+            dispatch(action.getData())
+        }
+    }
+}
+export default connect(mapState,mapAction)(Home)

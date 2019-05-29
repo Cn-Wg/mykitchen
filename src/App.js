@@ -1,13 +1,13 @@
 import React from 'react';
-import Tabbar from './components/tabbar/index'
-import {BrowserRouter as Router } from 'react-router-dom'
+import {BrowserRouter as Router , Route} from 'react-router-dom'
+import Use from './components/use'
 import './App.css'
 function App() {
   return (
     <div className="App">
     <Router>
-      <Tabbar />
-    </Router>
+      <Use />
+      </Router>
     </div>
   );
 }

@@ -1,0 +1,116 @@
+.details{
+    margin-top:.9rem;
+    margin-bottom: 1rem;
+}
+.details-top{
+    width:100%;
+    height:.9rem;
+    background:#fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 .24rem;
+    align-items: center;
+    font-size: .3rem;
+    border-bottom: .01rem solid #e5e5e5;
+    position: fixed;
+    top:0;
+    z-index: 999;
+}
+.details-top i {
+    width:.44rem;
+    height:.44rem;
+}
+.details-top p {
+    width:.64rem;
+    height:.64rem;
+}
+.details-top p img {
+    width:100%;
+    height:100%;
+}
+
+.details-top i img {
+    width:100%;
+    height:100%;
+}
+
+/* goods */
+
+.details-con{
+    width:100%;
+    height:auto;
+    background: #fff;
+}
+.details-con a {
+    display: flex;
+    width: 100%;
+    height: 2.92rem;
+    padding: .4rem .24rem .32rem;
+    border-bottom: .01rem solid #e5e5e5;
+}
+.details-con-left {
+    width:2.2rem;
+    height:2.2rem;
+}
+.details-con-left img {
+    width:100%;
+    height:100%;
+}
+
+.details-con-right{
+    width:4.6rem;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    margin-left:.2rem;
+}
+.details-con-right h1 {
+    width: 100%;
+    height: .84rem;
+    line-height: .42rem;
+    font-size: .3rem;
+    font-weight: 600;
+    letter-spacing: .02rem;
+    width: 100%;
+    top: .9rem;
+    background: #fff;
+    margin-bottom: .9rem;
+}
+.details-con-right h2 {
+    display: flex;
+    width:100%;
+    height:.53rem;
+    position: relative;
+}
+.details-con-right h2 span {
+    font-size: .32rem;
+    color: #ff5918;
+    margin-right: .2rem;
+}
+.details-con-right h2 p {
+    font-size: .24rem;
+    text-decoration: line-through;
+    color: #ccc;
+    line-height: .4rem;
+}
+.details-con-right h2 i {
+    width:.52rem;
+    height:.52rem;
+    position: absolute;
+    right:0;
+    bottom:.1rem;
+}
+.details-con-right h2 i img {
+    width:100%;
+    height:100%;
+}
+
+.details-con li {
+    height:1rem;
+    width:100%;
+    background: #fff;
+    color: #666;
+    font-size: .28rem;
+    text-align: center;
+    line-height: 1rem;
+}

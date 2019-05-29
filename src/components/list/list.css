@@ -1,0 +1,133 @@
+.list{
+    margin-bottom:1rem;
+}
+.list-top{
+    width:100%;
+    height:.95rem;
+    background: #fff;
+    padding-top:.12rem;
+}
+.list-top-con{
+    width: 7.1rem;
+    height: .68rem;
+    margin: 0 .24rem;
+    line-height: .62rem;
+    border-radius: .12rem;
+    padding: 0 .24rem;
+    border: .01rem solid #ccc;
+    overflow: hidden;
+    color:#ccc;
+    display: flex;
+    font-size: .28rem;
+}
+.list-top-con .search {
+    width:.4rem;
+    height:.4rem;
+    margin-top:.13rem;
+    margin-right:.1rem;
+}
+.list-top-con .search img {
+    width:100%;
+    height:100%;
+}
+/* 选项卡 */
+.list-nav{
+    width:100%;
+    min-height:12rem;
+    margin-top:.2rem;
+    background: #f4f5f7;
+    display: flex;
+}
+.list-nav-left{
+    width:1.8rem;
+    height:12.1rem;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    background:#fff;
+    border-right: 1px solid #f4f4f4;
+}
+.list-nav-left a {
+    display: block;
+    width:100%;
+    height:1rem;
+    text-align: center;
+    padding:.26rem 0;
+    color:#666;
+    font-size: .26rem
+}
+.list-nav-left a span {
+    display: block;
+    width:100%;
+    height:.6rem;
+    margin-top:.1rem;
+    line-height: .6rem;
+}
+.list-nav-left .active {
+    border-left: .06rem solid #6eb042;
+    font-size: .3rem;
+    color:#6eb042;
+}
+
+.list-nav-right{
+    background: #e5e5e5;
+    
+}
+.list-nav-right-top{
+    width:5.69rem;
+    height:5.72rem;
+    background:#fff;
+    margin-bottom:.3rem;
+}
+.list-nav-right-top h1 {
+    width:100%;
+    height:.9rem;
+    text-align: center;
+    line-height: .9rem;
+    color:#e5e5e5;
+}
+.list-nav-right-top h1 span {
+    color: #011e00;
+    font-size: .28rem;
+    line-height: 1rem;
+    text-align: center;
+    font-weight: 550;
+    margin:0 .2rem;
+}
+
+.list-nav-right-bottom{
+    width:100%;
+    height:4.6rem;
+    padding: .2rem .02rem 0 .22rem;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.list-nav-right-bottom a {
+    width:1.58rem;
+    height:2.2rem;
+    display: flex;
+    flex-direction: column;
+    margin-right: .22rem;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+    padding: .3rem 0;
+
+}
+.list-nav-right-bottom a p {
+    width:1rem;
+    height:1rem;
+}
+.list-nav-right-bottom a p img {
+    width:100%;
+    height:100%;
+}
+.list-nav-right-bottom a i {
+    font-size: .24rem;
+    color: #666;
+    line-height: .34rem;
+    padding-top: .2rem;
+    margin-left: .29rem;
+    overflow: hidden;
+}
