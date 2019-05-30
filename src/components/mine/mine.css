@@ -215,6 +215,8 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+}
+.border-line >ul >li >.order-word{
     color: #999;
 }
 .border-line >ul >li >.order-pic{   

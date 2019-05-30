@@ -293,7 +293,7 @@
 }
 .label >.label-price{
     float: left;
-    width: 3.16rem;
+    width: 3.26rem;
     height: 1.14rem;
     margin-left: .2rem;
     padding: .16rem 0;
@@ -324,5 +324,5 @@
     color: #fff;
     background: rgb(249, 109, 22);
     text-align: center;
-    margin-left: 1.3rem;
-}
+    margin-left: 1.2rem;
+} 
