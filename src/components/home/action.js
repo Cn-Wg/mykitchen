@@ -17,7 +17,6 @@ export default {
     getAllData(){
         return (dispatch)=>{
             axios.get('http://api9.wochu.cn/api/app/acts?version=20.0.0&source=H').then((res)=>{
-            console.log(res.data.data.acts)
             dispatch({
                 type:'GETALLDATA',
                 ltime:res.data.data.acts[2].items,

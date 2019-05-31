@@ -10,7 +10,7 @@ function Use() {
     <Router>
     <Route path="/details" component={Details} />
     <Route path="/search" component={Search} />
-    <Route path="/goods" component={Goods} />
+    <Route path="/goods/:id" component={Goods} />
       <Tabbar />
     </Router>
     </div>

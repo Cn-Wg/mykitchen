@@ -1,5 +1,5 @@
 import React from 'react'
-import {NavLink} from 'react-router-dom'
+import {NavLink , Route , Switch} from 'react-router-dom'
 import './list.css'
 import ListRight from './listright'
 class List extends React.Component{
@@ -14,20 +14,20 @@ class List extends React.Component{
         {/* 选项卡 */}
             <div className="list-nav">
                 <ul className="list-nav-left">
-                    <NavLink to="/listRight"><span>推荐</span></NavLink>
-                    <NavLink to="/listRight"><span>我厨优选</span></NavLink>
-                    <NavLink to="/listRight"><span>餐馆名菜</span></NavLink>
-                    <NavLink to="/listRight"><span>全部净菜</span></NavLink>
-                    <NavLink to="/listRight"><span>儿童专区</span></NavLink>
-                    <NavLink to="/listRight"><span>蔬菜</span></NavLink>
-                    <NavLink to="/listRight"><span>水果</span></NavLink>
-                    <NavLink to="/listRight"><span>肉禽蛋</span></NavLink>
-                    <NavLink to="/listRight"><span>水产海鲜</span></NavLink>
-                    <NavLink to="/listRight"><span>乳饮西点</span></NavLink>
-                    <NavLink to="/listRight"><span>点心速食</span></NavLink>
-                    <NavLink to="/listRight"><span>粮油副食</span></NavLink>
+                    <NavLink to="/listright"><span>推荐</span></NavLink>
+                    <NavLink to="/listright"><span>我厨优选</span></NavLink>
+                    <NavLink to="/listright"><span>餐馆名菜</span></NavLink>
+                    <NavLink to="/listright"><span>全部净菜</span></NavLink>
+                    <NavLink to="/listright"><span>儿童专区</span></NavLink>
+                    <NavLink to="/listright"><span>蔬菜</span></NavLink>
+                    <NavLink to="/listright"><span>水果</span></NavLink>
+                    <NavLink to="/listright"><span>肉禽蛋</span></NavLink>
+                    <NavLink to="/listright"><span>水产海鲜</span></NavLink>
+                    <NavLink to="/listright"><span>乳饮西点</span></NavLink>
+                    <NavLink to="/listright"><span>点心速食</span></NavLink>
+                    <NavLink to="/listright"><span>粮油副食</span></NavLink>
                 </ul>
-                <ListRight />
+                <Route path="/listright" component={ListRight} />
             </div>
         </div>
     }

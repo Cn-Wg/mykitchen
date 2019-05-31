@@ -9,7 +9,6 @@ class Home extends React.Component{
     componentDidMount(){
         this.props.getData();
         this.props.getAllData();
-        console.log(this.props.ltimelist)
     }
     componentDidUpdate(){
         var mySwiper = new Swiper ('.swiper-container', {
@@ -25,7 +24,19 @@ class Home extends React.Component{
 
   })
     }
+    add(id){
+        this.props.history.push('/goods/'+id)
+        
+    }
     render(){
+        var list = this.props.list ? this.props.list : []
+        var nav1 = this.props.nav1 ? this.props.nav1 : []
+        var nav2 = this.props.nav2 ? this.props.nav2 : []
+        var ltime = this.props.ltime ? this.props.ltime : []
+        var ltimelist = this.props.ltimelist ? this.props.ltimelist : []
+        var big = this.props.big ? this.props.big : []
+        var biglist = this.props.biglist ? this.props.biglist : []
+        
         return <div className="home">
         {/* 头部 */}
             <div className="top">
@@ -44,7 +55,7 @@ class Home extends React.Component{
         <div className="swiper-container">
 			    <div className="swiper-wrapper banner">
 			       {
-			       	  this.props.list.map((item)=>{
+			       	  list.map((item)=>{
 			       	    return 	<div key={item.sortIndex} className="swiper-slide">
 			       	    	<a href="https://wmall.wochu.cn/h5/activityTemplate/html/newActivityTemplate.html?activityId=91"><img src={item.picUrl} /></a>
 			       	    </div>
@@ -60,14 +71,14 @@ class Home extends React.Component{
             <div className="Nav">
             <ul> 
                     {
-                       this.props.nav1.map((item)=>{
+                       nav1.map((item)=>{
                            return <a href="https://wmall.wochu.cn/h5/activityTemplate/html/newActivityTemplatew.html?activityId=85" key={item.pos}><img src={item.imgUrl} /></a>
                        })
                    }
             </ul>
                 <ul>
                     {
-                        this.props.nav2.map((item)=>{
+                        nav2.map((item)=>{
                         return <a href="http://wmall.wochu.cn/h5/personal/recharge.html" key={item.pos}><img src={item.imgUrl} /></a>
                         })
                     }
@@ -92,9 +103,9 @@ class Home extends React.Component{
                 </div>
 
                     {
-                        this.props.ltime.map((item)=>{
+                        ltime.map((item)=>{
 
-                            return  <NavLink to="goods"  className="ltime-bottom">
+                            return  <div onClick={this.add.bind(this,item.source)} className="ltime-bottom">
                              <div className="ltime-bottom-left">
                                         <img src={item.imgUrl} />
                                     </div>
@@ -103,7 +114,7 @@ class Home extends React.Component{
                                         <h2>{item.description}</h2>
                                         <h3><span>￥<b>{item.price}</b></span><p>{item.marketPrice}</p><i><img src="http://wmall.wochu.cn/h5/home/vueimg/add.png" /></i></h3>
                                     </div>
-                                </NavLink>
+                                </div>
                                     
                         })
                     }
@@ -111,8 +122,8 @@ class Home extends React.Component{
         {/* 商品 */}
             <div className="goods">
             {  
-                this.props.ltimelist.map((item)=>{
-                    return <NavLink to="goods" className="goods-con">
+                ltimelist.map((item)=>{
+                    return <NavLink to={"/goods/" + item.source} className="goods-con">
                                 <div className="goods-con-top"><img src={item.imgUrl} /></div>
                                 <h1>{item.goodsName}</h1>
                                 <h2>￥{item.marketPrice}</h2>
@@ -150,8 +161,8 @@ class Home extends React.Component{
 
                     <div className="ltime-bottom">
                     {
-                        this.props.big.map((item)=>{
-                            return  <NavLink to="goods" className="ltime-bottom">
+                        big.map((item)=>{
+                            return  <NavLink to={"/goods/" + item.source} className="ltime-bottom">
                              <div className="ltime-bottom-left">
                                         <img src={item.imgUrl} />
                                     </div>
@@ -168,8 +179,8 @@ class Home extends React.Component{
             {/* 商品 */}
             <div className="goods">
             {  
-                this.props.biglist.map((item)=>{
-                    return <NavLink to="goods" className="goods-con">
+                biglist.map((item)=>{
+                    return <NavLink to={"/goods/" + item.source} className="goods-con">
                                 <div className="goods-con-top"><img src={item.imgUrl} /></div>
                                 <h1>{item.goodsName}</h1>
                                 <h2>￥{item.marketPrice}</h2>
