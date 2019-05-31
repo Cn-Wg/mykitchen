@@ -1,16 +1,21 @@
 import React from 'react'
-import {Switch,Route,NavLink,Redirect} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 import './goods.css'
 import GoodsAction from './action'
 import {connect} from 'react-redux'
+import ShopCarAction from '../shopcar/action'
 class Goods extends React.Component{
     componentDidMount(){
         var str = this.props.match.params.id;
          this.props.getData(str)
          this.props.getLike()
     }
+    add(id){
+
+        this.props.history.push('/goods/'+id)
+        this.props.history.go()
+    }
     render(){
-        console.log(this.props)
         var obj = this.props.obj ? this.props.obj : '';
         var list = this.props.list ? this.props.list : [];
         return <div className="d-goods">
@@ -73,7 +78,7 @@ class Goods extends React.Component{
 
                 {
                     list.map((item)=>{
-                        return   <div key={item.goodsGuid} className="shopcar-other-shop">
+                        return   <div onClick={this.add.bind(this,item.goodsGuid)} key={item.goodsGuid} className="shopcar-other-shop">
                                         <div className="shopcar-other-shop-pic">
                                             <img src={item.picUrl}/>
                                         </div>
@@ -104,11 +109,10 @@ class Goods extends React.Component{
             </div>
         {/* (加入购物车) */}
             <div className="d-goods-add">
-                <div className="d-goods-cart">
+                <a href="/index/shopcar" className="d-goods-cart">
                     <img src="http://wmall.wochu.cn/h5/mall/img/vueimg/catr.png"/>
-                    <span>2</span>
-                </div>
-                <div className="d-goods-cart2">加入购物车</div>
+                </a>
+                <div className="d-goods-cart2" onClick={this.props.add.bind(this,obj.goodsGuid)}>加入购物车</div>
             </div>
         </div>
     }
@@ -127,6 +131,9 @@ var mapAction = (dispatch)=>{
         },
         getLike(){
             dispatch(GoodsAction.getLike())
+        },
+        add(id){
+            dispatch(ShopCarAction.add(id))
         }
     }
 }

@@ -26,7 +26,7 @@ class Home extends React.Component{
     }
     add(id){
         this.props.history.push('/goods/'+id)
-        
+        this.props.history.go()
     }
     render(){
         var list = this.props.list ? this.props.list : []
@@ -56,7 +56,7 @@ class Home extends React.Component{
 			    <div className="swiper-wrapper banner">
 			       {
 			       	  list.map((item)=>{
-			       	    return 	<div key={item.sortIndex} className="swiper-slide">
+			       	    return 	<div key={item.goodsGuid} className="swiper-slide">
 			       	    	<a href="https://wmall.wochu.cn/h5/activityTemplate/html/newActivityTemplate.html?activityId=91"><img src={item.picUrl} /></a>
 			       	    </div>
 			       	  })
@@ -72,14 +72,14 @@ class Home extends React.Component{
             <ul> 
                     {
                        nav1.map((item)=>{
-                           return <a href="https://wmall.wochu.cn/h5/activityTemplate/html/newActivityTemplatew.html?activityId=85" key={item.pos}><img src={item.imgUrl} /></a>
+                           return <a href="https://wmall.wochu.cn/h5/activityTemplate/html/newActivityTemplatew.html?activityId=85" key={item.goodsGuid}><img src={item.imgUrl} /></a>
                        })
                    }
             </ul>
                 <ul>
                     {
                         nav2.map((item)=>{
-                        return <a href="http://wmall.wochu.cn/h5/personal/recharge.html" key={item.pos}><img src={item.imgUrl} /></a>
+                        return <a href="http://wmall.wochu.cn/h5/personal/recharge.html" key={item.goodsGuid}><img src={item.imgUrl} /></a>
                         })
                     }
                 </ul>
@@ -105,7 +105,7 @@ class Home extends React.Component{
                     {
                         ltime.map((item)=>{
 
-                            return  <div onClick={this.add.bind(this,item.source)} className="ltime-bottom">
+                            return  <div key={item.goodsGuid} onClick={this.add.bind(this,item.source)} className="ltime-bottom">
                              <div className="ltime-bottom-left">
                                         <img src={item.imgUrl} />
                                     </div>
@@ -123,13 +123,13 @@ class Home extends React.Component{
             <div className="goods">
             {  
                 ltimelist.map((item)=>{
-                    return <NavLink to={"/goods/" + item.source} className="goods-con">
+                    return <div key={item.goodsGuid} onClick={this.add.bind(this,item.source)} className="goods-con">
                                 <div className="goods-con-top"><img src={item.imgUrl} /></div>
                                 <h1>{item.goodsName}</h1>
                                 <h2>￥{item.marketPrice}</h2>
                                 <h3>￥{item.price}</h3>
                                 <h4><img src="http://wmall.wochu.cn/h5/home/vueimg/add.png" /></h4>
-                         </NavLink>
+                         </div>
                 })
             }
                
@@ -162,7 +162,7 @@ class Home extends React.Component{
                     <div className="ltime-bottom">
                     {
                         big.map((item)=>{
-                            return  <NavLink to={"/goods/" + item.source} className="ltime-bottom">
+                            return  <div  key={item.goodsGuid} onClick={this.add.bind(this,item.source)} className="ltime-bottom">
                              <div className="ltime-bottom-left">
                                         <img src={item.imgUrl} />
                                     </div>
@@ -171,7 +171,7 @@ class Home extends React.Component{
                                         <h2>{item.description}</h2>
                                         <h3><span>￥<b>{item.price}</b></span><p>{item.marketPrice}</p><i><img src="http://wmall.wochu.cn/h5/home/vueimg/add.png" /></i></h3>
                                     </div>
-                                </NavLink> 
+                                </div> 
                         })
                     }
                     </div>
@@ -180,13 +180,13 @@ class Home extends React.Component{
             <div className="goods">
             {  
                 biglist.map((item)=>{
-                    return <NavLink to={"/goods/" + item.source} className="goods-con">
+                    return <div  key={item.goodsGuid} onClick={this.add.bind(this,item.source)} className="goods-con">
                                 <div className="goods-con-top"><img src={item.imgUrl} /></div>
                                 <h1>{item.goodsName}</h1>
                                 <h2>￥{item.marketPrice}</h2>
                                 <h3>￥{item.price}</h3>
                                 <h4><img src="http://wmall.wochu.cn/h5/home/vueimg/add.png" /></h4>
-                         </NavLink>
+                         </div>
                 })
             }
             </div>

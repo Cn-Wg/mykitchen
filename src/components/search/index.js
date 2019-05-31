@@ -2,7 +2,7 @@ import React from 'react'
 import './search.css'
 class Search extends React.Component{
     back(){
-        console.log(this.props.history.goback)
+        this.props.history.go(-1)
     }
     render(){
         return <div>

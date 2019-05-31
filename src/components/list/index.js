@@ -1,35 +1,53 @@
 import React from 'react'
-import {NavLink , Route , Switch} from 'react-router-dom'
-import './list.css'
-import ListRight from './listright'
+import "./list.css"
+import {NavLink} from 'react-router-dom'
+import {connect} from 'react-redux'
+import ListAction from './action'
 class List extends React.Component{
+    componentDidMount(){
+        this.props.getData()
+    }
     render(){
-        return <div className="list">
-            <div className="list-top">
+        var list = this.props.list ? this.props.list : [] ;
+        return <div className="list-nav-right">
+          <div className="list-top">
                 <NavLink to="/search" className="list-top-con">
                     <div className="search"><img src="http://wmall.wochu.cn/h5/classify/img/icon-search-40@2x.png" /></div>
                     支持首字母搜索
                 </NavLink>
             </div>
-        {/* 选项卡 */}
-            <div className="list-nav">
-                <ul className="list-nav-left">
-                    <NavLink to="/listright"><span>推荐</span></NavLink>
-                    <NavLink to="/listright"><span>我厨优选</span></NavLink>
-                    <NavLink to="/listright"><span>餐馆名菜</span></NavLink>
-                    <NavLink to="/listright"><span>全部净菜</span></NavLink>
-                    <NavLink to="/listright"><span>儿童专区</span></NavLink>
-                    <NavLink to="/listright"><span>蔬菜</span></NavLink>
-                    <NavLink to="/listright"><span>水果</span></NavLink>
-                    <NavLink to="/listright"><span>肉禽蛋</span></NavLink>
-                    <NavLink to="/listright"><span>水产海鲜</span></NavLink>
-                    <NavLink to="/listright"><span>乳饮西点</span></NavLink>
-                    <NavLink to="/listright"><span>点心速食</span></NavLink>
-                    <NavLink to="/listright"><span>粮油副食</span></NavLink>
-                </ul>
-                <Route path="/listright" component={ListRight} />
-            </div>
+            {
+                list.map((item)=>{
+                    return <div className="list-nav-right-top">
+                                <h1>——<span>{item.name}</span>——</h1>
+                                <ul className="list-nav-right-bottom">
+                                {
+                                    item.children.map((newitem)=>{
+                                        return <NavLink to="/details">
+                                                    <p><img src={newitem.imgUrl} /></p>
+                                                    <i>{newitem.name}</i>
+                                                </NavLink>
+                                    })
+                                }                                                     
+                                </ul>
+                            </div>
+                })
+            }
         </div>
     }
 }
-export default List
+var mapState=(state)=>{
+    return {
+        list : state.list.list,
+    }
+}
+
+var mapAction = (dispatch)=>{
+    return {
+        getData(){
+            dispatch(ListAction.getData())
+        },
+
+    }
+}
+export default connect(mapState,mapAction)(List)
